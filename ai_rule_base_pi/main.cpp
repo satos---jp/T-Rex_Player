@@ -48,12 +48,12 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,i
 #ifdef ONLINE
 	const char browsername[400]="T-Rex Game - Google Chrome";
 #else
-	//const char browsername[400]="http://‚¨èŒ³‚ÌƒXƒ}ƒz‚Å‚àƒvƒŒƒC‚Å‚«‚Ü‚·/ ‚ÉÚ‘±‚Å‚«‚Ü‚¹‚ñ - Google Chrome";
-	const char browsername[400]="http://tsgtsgtsgtsgtsg/ ‚ÉÚ‘±‚Å‚«‚Ü‚¹‚ñ - Google Chrome";
-	//‚±‚±‚ğA“K“–‚È•¶š—ñ‚É‚µ‚Ä‚­‚¾‚³‚¢B
-	//—á‚¦‚ÎAgoogle‚É‚Â‚È‚°‚æ‚¤‚Æ‚µ‚Ä‚Â‚È‚ª‚ç‚È‚¢‚Æ‚«‚ÍA
-	//const char browsername[400]="http://www.google.co.jp/ ‚ÉÚ‘±‚Å‚«‚Ü‚¹‚ñ - Google Chrome";
-	//‚É‚µ‚Ä‚İ‚Ä‚­‚¾‚³‚¢B(‚Ü‚ A’[“I‚ÉŒ¾‚Á‚ÄƒEƒCƒ“ƒhƒE–¼‚Å‚·B)
+	//const char browsername[400]="http://ãŠæ‰‹å…ƒã®ã‚¹ãƒãƒ›ã§ã‚‚ãƒ—ãƒ¬ã‚¤ã§ãã¾ã™/ ã«æ¥ç¶šã§ãã¾ã›ã‚“ - Google Chrome";
+	const char browsername[400]="http://www.tsg.ne.jp/ ã«æ¥ç¶šã§ãã¾ã›ã‚“ - Google Chrome";
+	//ã“ã“ã‚’ã€é©å½“ãªæ–‡å­—åˆ—ã«ã—ã¦ãã ã•ã„ã€‚
+	//ä¾‹ãˆã°ã€googleã«ã¤ãªã’ã‚ˆã†ã¨ã—ã¦ã¤ãªãŒã‚‰ãªã„ã¨ãã¯ã€
+	//const char browsername[400]="http://www.google.co.jp/ ã«æ¥ç¶šã§ãã¾ã›ã‚“ - Google Chrome";
+	//ã«ã—ã¦ã¿ã¦ãã ã•ã„ã€‚(ã¾ã‚ã€ç«¯çš„ã«è¨€ã£ã¦ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦åã§ã™ã€‚)
 #endif
 
 	hwnd = GetHwnd(browsername);
@@ -102,7 +102,7 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,i
 	while(GetMessage(&msg , NULL , 0 , 0)){
 		DispatchMessage(&msg);
 		
-		if((((double)(clock()-mt))/CLOCKS_PER_SEC) * (10000.0)>(1.0)){ //judge‚ÌŠÔŠu‚Å‚·B
+		if((((double)(clock()-mt))/CLOCKS_PER_SEC) * (10000.0)>(1.0)){ //judgeã®é–“éš”ã§ã™ã€‚
 			HDC ghdc = CopyWindow(hwnd);
 			
 			mt = clock(); 
@@ -115,7 +115,7 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,i
 				}
 				eprintf("gethwnd %d\n",(int)hwnd);
 			}
-			ai->ai_decision(ghdc,mt); //‰æ‘œ‚ğæ‚Á‚½ŠÔ‚àˆê‚É“n‚µ‚Ä‚â‚é
+			ai->ai_decision(ghdc,mt); //ç”»åƒã‚’å–ã£ãŸæ™‚é–“ã‚‚ä¸€ç·’ã«æ¸¡ã—ã¦ã‚„ã‚‹
 			
 			SendMessage(debhwnd,WM_APP,0,((LPARAM)ghdc));
 			mt = terv = clock();
