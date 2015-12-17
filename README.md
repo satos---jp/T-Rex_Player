@@ -1,2 +1,2 @@
 # T-Rex_Player
-Auto play for google T-Rex game
+Auto player for google T-Rex game
